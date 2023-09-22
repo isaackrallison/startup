@@ -1,11 +1,15 @@
 # startup
 Repository for CS 260 website
 ## Elevator Pitch
-	Have you ever had some friends together and tried to decide on what to do? <br>
-    How about when you are with your family trying to decide where to go to eat?  <br>
-    It can be tough to decide on a choice that makes everyone happy, <br>
-    especially when there’s a big group. So why not take a quick vote on it! <br>
-    With this startup the decision can be made in just a few minutes.
+Have you ever had some friends together and tried to decide on what to do?
+<br>
+How about when you are with your family trying to decide where to go to eat?
+<br>
+It can be tough to decide on a choice that makes everyone happy,
+<br>
+especially when there’s a big group. So why not take a quick vote on it!
+<br>
+With this startup the decision can be made in just a few minutes.
 
 ## Technologies
 - HTML- HTML will provide the general structure of the site including the different pages
