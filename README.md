@@ -25,3 +25,11 @@ With this startup the decision can be made in just a few minutes.
 ![Alt text](image-1.png)
 ![Alt text](image-2.png)
 ![Alt text](image-3.png)
+
+## Sartup HTML
+General structure of website was completed in html code including the follwing.
+
+- Html pages for each necessary component of the webite.
+- Links between pages through input boxes and menu
+- textual content
+- placeholders for all later course content eg. (Login, Database and Websocket)
