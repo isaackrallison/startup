@@ -4,6 +4,13 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+}
+
+header{
+    padding: 5px;
 }
 
 .header {
@@ -17,7 +24,7 @@ h1 {
 }
 
 h3 {
-    text-align: right;
+    text-align: right; 
 }
 
 
@@ -91,11 +98,19 @@ menu li:nth-child(6n + 6) a:before {
 }
 
 main{
-    flex: 1
+    flex: 1;
+    background-color: blanchedalmond;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px;
 }
+
 
 footer {
     text-align: left;
     margin-top: auto;
     display: inline;
+    background-color: grey;
+    color: #FFFFFF;
+    padding: 5px;
 }
