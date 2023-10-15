@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
 
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -62,8 +68,8 @@ menu li a:hover:before {
   opacity: 1;
   left: 50%;
   letter-spacing: 10px;
-  width: 1800px;
-  height: 1800px;
+  width: 2000px;
+  height: 2000px;
 }
 menu li:nth-child(6n + 1) a:before {
   background: #0470fe;
@@ -85,5 +91,11 @@ menu li:nth-child(6n + 6) a:before {
 }
 
 main{
-    height: 100%;
+    flex: 1
+}
+
+footer {
+    text-align: left;
+    margin-top: auto;
+    display: inline;
 }
