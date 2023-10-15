@@ -1,12 +1,19 @@
-h1 {
-    text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h2 {
+h1 {
+    text-align: left;
+}
+
+h3 {
     text-align: right;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
 
 menu {
   position:relative;
@@ -75,4 +82,8 @@ menu li:nth-child(6n + 5) a:before {
 }
 menu li:nth-child(6n + 6) a:before {
   background: #ffeaa7;
+}
+
+main{
+    height: 100%;
 }
