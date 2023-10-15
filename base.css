@@ -30,6 +30,7 @@ h3 {
 
 menu {
   position:relative;
+  padding-inline-start: 0px;
 }
 menu li {
   list-style: none;
@@ -97,13 +98,21 @@ menu li:nth-child(6n + 6) a:before {
   background: #ffeaa7;
 }
 
+#picture {
+    float: right;
+}
+
 main{
     flex: 1;
     background-color: blanchedalmond;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding: 5px;
-    text-align: left;
+    /* flex: 1 calc(100vh - 110px); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 input {
