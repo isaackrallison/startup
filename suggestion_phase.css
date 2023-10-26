@@ -21,6 +21,11 @@ main{
     justify-content: flex-start;
   }
 
+.votes{
+    position: absolute;
+    right: 10px;
+}
+
   ul {
     list-style-type: none;
   }

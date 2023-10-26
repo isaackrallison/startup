@@ -106,6 +106,10 @@ menu li:nth-child(6n + 6) a:before {
     float: right;
 }
 
+li{
+  padding: 5px;
+}
+
 main{
     flex: 1;
     background-color: blanchedalmond;
