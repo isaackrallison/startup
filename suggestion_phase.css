@@ -1,0 +1,15 @@
+main{
+    display:contents;
+}
+
+
+#timer {
+    display: flex;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+#prev {
+    bottom: 10px;
+    right: 10px;
+}
