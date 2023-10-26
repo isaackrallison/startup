@@ -33,3 +33,14 @@ General structure of website was completed in html code including the follwing.
 - Links between pages through input boxes and menu
 - textual content
 - placeholders for all later course content eg. (Login, Database and Websocket)
+
+
+## Startup CSS
+CSS was added to complement the exsisting html including
+
+- header, footer, and main body content styling
+- a slick navigation interface
+- mostly responsive features
+- styled buttons and textboxes for user input
+- text placement and font selection
+- an image in the about section of the page
