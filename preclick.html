@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3513/3513768.png" />
-    <link rel="stylesheet" type="text/css" href="base.css">
     <link rel="stylesheet" type="text/css" href="suggestion_phase.css">
+    <link rel="stylesheet" type="text/css" href="base.css">
   </head>
 
   <body>
@@ -29,6 +29,7 @@
     </header>
 
     <main>
+      <div id="suggest">
     <p>You have just one minute to make suggestions so hurry!</p>
       <div class="voter">
         Voter:
@@ -41,15 +42,17 @@
       <button type="submit" fdprocessedid="atelke">Submit</button>
       </form>
 
-      <br />
       </div>
       <div id="timer">60 Seconds Left!</div>
-      <div>
-        <p id="prev" >A few of your previous suggestions</p>
+      <div id="prev">
+        <p>A few of your previous suggestions</p>
         <ul class="prev_votes">
             <li class="prev_vote">smores?</li>
             <li class="prev_vote">pinic?</li>
         </ul>
+      </div>
+    </div>
+      <div id="timer">60 Seconds Left!</div>
     </main>
 
     <footer>

@@ -139,6 +139,12 @@ button {
     font-size: 16px;
   }
 
+  #timer{
+    position:fixed;
+    bottom: 60px;;
+    right: 10px;
+    font-weight:300;
+}
 
 footer {
     text-align: left;
