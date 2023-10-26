@@ -150,6 +150,11 @@ button {
     font-weight:300;
 }
 
+  #quote{
+    position: absolute;
+    right: 10px;
+}
+
 footer {
     text-align: left;
     margin-top: auto;
