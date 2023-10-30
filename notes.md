@@ -50,9 +50,9 @@ deployment command <br>
 }
 
 - How would you display an image with a hyperlink in HTML?
-/ <a href="https://example.com">
-  <img src="image.jpg" alt="Description of the Image">
-</a>
+/ <.a href="https://example.com">
+  <.img src="image.jpg" alt="Description of the Image">
+<./a>
 
 - In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
 / content, padding, border, margin
