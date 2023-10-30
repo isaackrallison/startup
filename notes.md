@@ -78,7 +78,7 @@ First Level Heading (H1): <.h1>
 Third Level Heading (H3): <.h3>
 
 - How do you declare the document type to be html?
-/<!DOCTYPE html>
+/<.!DOCTYPE html>
 
 
 - What is valid javascript syntax for if, else, for, while, switch statements?
