@@ -50,7 +50,7 @@ deployment command <br>
 }
 
 - How would you display an image with a hyperlink in HTML?
-/ <.a href="https://example.com">
+/ <.a href="htt.ps://example.com">
   <.img src="image.jpg" alt="Description of the Image">
 <./a>
 
