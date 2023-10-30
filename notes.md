@@ -182,3 +182,137 @@ sudo: "Superuser Do" is used to execute a command with superuser or administrati
 - What will the following code using Promises output when executed?
 /
 
+### in class notes
+Ip address is basically post office address
+DNS- domain name server- finds ip address when given url
+Network address translation- Router acts as only actual connection to internet because there are only 4 billion possible ip addresses (not enough)
+Html does structure 
+css does style
+java script does functionality
+do everything so it works on chrome-> use chrome for this class
+
+9/7
+Client server only gives information
+Web sockets let you do peer to peer meaning it gives you information you didn’t ask for
+Build correct mental models of whats going on
+Develop locally then push it out into production environment
+Need to clone git repository
+What is your idea? Has to have all 8 things
+Elevator pitch
+Sketches
+Technologies
+
+9/12
+Startup proposal design is due to the 23
+Commit to git regularly
+
+9/14
+127.0.0.1 is your own ip address-> sends it back to you
+HTTPS:443 is a port- is essentially a window into your castle
+Door 443 is the door used for HTTPS 
+Port 22 is used for ssh
+Door number 80 is used for HTTP (without the S-> not secure)
+You can have webserver do multiple things through a gateway
+Gateway is port 443
+AWS EC2
+AMI is like generally what software you want on the machine
+When you get domain only change/ create A record
+Create two A records
+One with the URL and one with */domain name
+Copy and paste name of server in to get ride of 80
+At end write sudo service caddy restart
+
+9/19/2023
+Lets encrypt is free web certification request
+Servers essentially dap eachother up then use an encryption key so everything both sides do is encrypted
+
+Html is always built with a head and body
+Think about web documents in a tree model
+Html is tree
+Elements
+Always start with <!DOCTYPE html>
+<htlm lang=”en”>
+</html>
+
+Use WDN WebDocs or W3Schools.om to learn more about html when need to know something
+Span only takes up as much space as it needs to contain its elements
+
+9/26 CSS
+You can embed css directly into the html but don’t do it unless only in small cases
+There are a lot of different selectors- for instance selectors like paragraph
+Whole thing is called a rule
+Rule -> selector { 
+property: value;
+}
+CSS operates by rules that apply to either the whole tree or just specific parts of the tree
+Link to an additional file-> stylesheet
+Most local rule has precedence
+Children inherit rules from their parents
+
+Selectors
+Element div
+ID  #root  ID = “root”-> only use for one specific thing 
+Class- .highlight class= “highlight”
+Element class- p.highlight 
+
+Selectors
+List body, section
+
+Pseudo p:hover
+
+Go to your favorite webpage and mess around
+9/28/2023
+Reactive design- changes based upon how the app is being used
+See desktop mode no longer exists
+Display things- block will be as big as it can be
+Inline- only takes up as much space as it needs to 
+Flex- applies to parent element and sets up nicely
+Grid- makes a grid
+Phone browsers were built to fix websites
+<META
+	NAME=”VIEWPORT”
+	CONTENT=
+	  “WIDTH=DEVICE-WIDTH, INITIAL-SCALE=1”
+/>
+Media queries
+Eg.
+@media (orientation: portrait)
+
+Bootstrap CSS
+
+10/3
+JavaScript 
+In first line of JavaScript 
+‘use strict’;
+
+When in doubt CSS uses strings
+Whenever you want to do equality in CSS use ===
+Don’t use var
+A closure is a function that returns a function
+
+10/10
+EventListener 
+Debouncing is a technique that dosen’t use expensive events fequencty
+
+10/24/2023
+Fetch will get whatever is at the url
+Curl is the way to get the website on your device
+http will go through port 80
+apis give you back json objects
+Url- uniform resource locator
+Scheme, domain, port, prath, parameters, anchor
+22 is ssh port
+
+HTTP- HyperText Transfer Protocol
+
+Use fetch for getting also for posting
+
+http status code- 
+200s are successes
+200s are redirects
+400 front end client bad news
+500 back end 
+
+Cookies- handled with fetch requests
+Cookies stores server information on the client
+Cache- keeps stuff around locally to respond to requests
