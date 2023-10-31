@@ -39,6 +39,52 @@ function displaySuggestions() {
 
 displaySuggestions();
 
+function createLiElement(user, activity, count) {
+    const userSuggestion = document.createElement('li');
+    userSuggestion.className = 'prev_vote';
+    userSuggestion.textContent = `${user} Suggested: ${activity}`;
+
+    const voteCounter = document.createElement('span');
+    voteCounter.className = 'vote-counter';
+    voteCounter.textContent = count;
+
+    userSuggestion.appendChild(voteCounter);
+
+    return userSuggestion;
+}
+
+function displayRandomSuggestions(count) {
+    const username = localStorage.getItem('userName');
+    const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+    const selectedSuggestions = getRandomSelection(suggestions, count);
+
+    const ulElement = document.querySelector('.prev_votes');
+
+    if (ulElement) {
+        // Clear any existing content in the list
+        ulElement.innerHTML = '';
+
+        for (const suggestion of selectedSuggestions) {
+            const liElement = createLiElement(username, suggestion.activity, suggestion.count);
+            ulElement.appendChild(liElement);
+        }
+    }
+}
+
+function getRandomSelection(array, count) {
+    const shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray.slice(0, count);
+}
+
+// Call displayRandomSuggestions with the desired count (e.g., 2 for two suggestions)
+displayRandomSuggestions(2);
+
+
+
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
