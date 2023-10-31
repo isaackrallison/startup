@@ -7,6 +7,7 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3513/3513768.png" />
     <link rel="stylesheet" type="text/css" href="suggestion_phase.css">
     <link rel="stylesheet" type="text/css" href="base.css">
+    <script src=timer.js></script>
 
   </head>
 
@@ -37,11 +38,11 @@
       </div><br />
       <form method="'get" action="Suggestion_phase.html">
         <label for="suggestion">Put your idea here!</label>
-        <input type="text" id="suggestion" placeholder="share a suggesstion" fdprocessedid="5uvtn">
-        <button type="submit" fdprocessedid="atelke">Submit</button>
+        <input type="text" id="suggestion"  placeholder="share a suggesstion">
+        <button type="submit" onclick="suggest()">Submit</button>
       </form>
 
-      <ul class="votes">
+      <ul id="votes">
         <li class="vote">You Suggeted: Let's play Basketball</li>
         <li class="vote">Tom Suggested; Let's get some food!</li>
         <li class="vote">Steve Suggested: Anyone down for tennis?</li>
@@ -57,7 +58,6 @@
             <li class="prev_vote">smores?</li>
             <li class="prev_vote">pinic?</li>
         </ul>
-        <script src="login.js"></script>
     </main>
 
     <footer>
@@ -65,5 +65,7 @@
       <br />
       <a href="https://github.com/isaackrallison/startup">GitHub</a>
     </footer>
+    <script src="login.js"></script>
+    <script src=suggestions.js></script>
   </body>
 </html>

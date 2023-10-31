@@ -7,6 +7,7 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3513/3513768.png" />
     <link rel="stylesheet" type="text/css" href="base.css">
     <link rel="stylesheet" type="text/css" href="voting.css">
+    <script src=timer.js></script>
   </head>
 
   <body>
@@ -31,6 +32,10 @@
     <main>
         <p>You have three votes. They can all go to the same suggestion
             or three different ones. You only have one minute so get to it!</p>
+            <div class="voter">
+              Voter:
+              <span id="user" >Please Login</span>
+            </div><br />
         <ul class="votes">
             <li class="vote">You Suggeted: Let's play Basketball
                 <button id="cast_vote" onclick="alert('vote Submited')">Vote!</button>
@@ -54,6 +59,7 @@
         <p>Let's get some food!</p></div>
 
           <div id="timer">10 Seconds Left!</div>
+          <script src="login.js"></script>
     </main>
     <footer>
       <span class="text-reset">Isaac Rallison</span>
