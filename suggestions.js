@@ -22,26 +22,6 @@ function suggest() {
     //  + player_suggestions.innerHTML;
 }
 
-displaySuggestions();
-
-// function displaySuggestions() {
-//     // Step 1: Retrieve the list of suggestions from local storage
-//     const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-//     const username = localStorage.getItem('userName');
-    
-//     // Step 2: Create a new list item element
-//     const newListItem = document.createElement('li');
-//     newListItem.className = 'vote player-event'; // Set the classes
-
-//     // Step 3: Set the content for the new list item
-//     newListItem.textContent = `${username} suggested: ${suggestions[suggestions.length - 1]}`;
-
-//     // Step 4: Append the new list item to the 'votes' list
-//     const playerSuggestions = document.querySelector('#votes');
-//     playerSuggestions.appendChild(newListItem);
-// }
-
-// displaySuggestions();
 
 function displaySuggestions() {
     // Step 1: Retrieve the list of suggestions from local storage
@@ -67,7 +47,41 @@ function displaySuggestions() {
 
         // Append the new list item to the <ul>
         playerSuggestions.appendChild(newListItem);
+        startCountdown()
     }
 }
+
+function prev() {
+
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+setInterval(() => {
+    
+    // Step 1: Retrieve the list of suggestions from local storage
+    const suggestions = ["Let's play Basketball", "Let's get some food!", "Anyone down for tennis?", "How about a hike?", "Let's go to the Lake",
+    "picnic anyone?","pickleball anyone?"];
+    const usernames = ["Phil", "Albert", "Jenna", "Scott"]
+
+    // Step 2: Get the <ul> element where you want to display the suggestions
+    const playerSuggestions = document.querySelector('#votes');
+
+    // Step 4: Loop through the suggestions and create a new <li> element for each
+    const suggestion = usernames[getRandomInt(0, usernames.length - 1)] + " suggested: " + suggestions[getRandomInt(0, usernames.length - 1)];
+
+        // Create a new list item element
+    const newListItem = document.createElement('li');
+    newListItem.className = 'vote player-event';
+
+        // Set the content for the new list item
+    newListItem.textContent = suggestion;
+
+        // Append the new list item to the <ul>
+    playerSuggestions.appendChild(newListItem);
+}, 5000);
 
 displaySuggestions();
