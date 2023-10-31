@@ -11,18 +11,6 @@ function suggest() {
     localStorage.setItem('suggestions', JSON.stringify(storedList));
   }
 
-  function displaySuggestions() {
-    // Step 1: Retrieve the list of suggestions from local storage
-    const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-    const username = localStorage.getItem('userName');
-
-    
-    player_suggestions = document.querySelector('#votes')
-    player_suggestions += `<li class="vote" class="player-event">${username} Suggested:</li>`
-    //  + player_suggestions.innerHTML;
-}
-
-
 function displaySuggestions() {
     // Step 1: Retrieve the list of suggestions from local storage
     const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
@@ -30,9 +18,6 @@ function displaySuggestions() {
 
     // Step 2: Get the <ul> element where you want to display the suggestions
     const playerSuggestions = document.querySelector('#votes');
-
-    // Step 3: Clear the existing content in case there are any
-    playerSuggestions.innerHTML = '';
 
     // Step 4: Loop through the suggestions and create a new <li> element for each
     for (let i = 0; i < suggestions.length; i++) {
@@ -47,13 +32,10 @@ function displaySuggestions() {
 
         // Append the new list item to the <ul>
         playerSuggestions.appendChild(newListItem);
-        startCountdown()
     }
 }
 
-function prev() {
-
-}
+displaySuggestions();
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -83,5 +65,3 @@ setInterval(() => {
         // Append the new list item to the <ul>
     playerSuggestions.appendChild(newListItem);
 }, 5000);
-
-displaySuggestions();
