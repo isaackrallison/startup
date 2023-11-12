@@ -13,9 +13,23 @@ function suggest() {
     localStorage.setItem('suggestions', JSON.stringify(storedList));
 }
 
-function displaySuggestions() {
-    // Step 1: Retrieve the list of suggestions from local storage
-    const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+
+async function displaySuggestions() {
+    let suggestions = [];
+    try {
+      // Get the latest high scores from the service
+      const response = await fetch('/api/suggestions');
+      scores = await response.json();
+  
+      // Save the scores in case we go offline in the future
+      localStorage.setItem('scores', JSON.stringify(suggestions));
+    } catch {
+      // If there was an error then just use the last saved scores
+      const storedSuggestions = localStorage.getItem('suggestions');
+      if (storedSuggestions) {
+        scores = JSON.parse(storedSuggestions);
+      }
+    }
     
     // Step 2: Get the <ul> element where you want to display the suggestions
     const playerSuggestions = document.querySelector('#votes');

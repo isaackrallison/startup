@@ -14,7 +14,7 @@ function startCountdown() {
     
         // Access the timer value
         seconds = storedTimerObject.seconds; // Use the same variable name
-        if (seconds <= 0) {
+        if (seconds < 0) {
             seconds = 60
         }
         console.log("Timer found in local storage:", seconds);

@@ -15,13 +15,13 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+apiRouter.get('/suggestions', (_req, res) => {
+  res.send(suggestions);
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
+apiRouter.post('/suggestions', (req, res) => {
+  scores = updateScores(req.body, suggestions);
   res.send(scores);
 });
 
