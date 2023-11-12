@@ -44,3 +44,12 @@ CSS was added to complement the exsisting html including
 - styled buttons and textboxes for user input
 - text placement and font selection
 - an image in the about section of the page
+
+## Startup Java Script
+Javascript was added to introduce functionality including
+
+- support for the javascript login
+- support for future database data
+- support for future websocket
+- meaningful interaction logic
+- I would have liked to have a more polished final product, but I am findind this project is a bit larger than I anticipated
