@@ -21,8 +21,8 @@ apiRouter.get('/suggestions', (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/suggestions', (req, res) => {
-  scores = updateScores(req.body, suggestions);
-  res.send(scores);
+  suggestions = updatesuggestions(req.body, suggestions);
+  res.send(suggestions);
 });
 
 // Return the application's default page if the path is unknown

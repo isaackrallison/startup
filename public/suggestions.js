@@ -19,15 +19,15 @@ async function displaySuggestions() {
     try {
       // Get the latest high scores from the service
       const response = await fetch('/api/suggestions');
-      scores = await response.json();
+      suggestions = await response.json();
   
       // Save the scores in case we go offline in the future
-      localStorage.setItem('scores', JSON.stringify(suggestions));
+      localStorage.setItem('suggestions', JSON.stringify(suggestions));
     } catch {
       // If there was an error then just use the last saved scores
       const storedSuggestions = localStorage.getItem('suggestions');
       if (storedSuggestions) {
-        scores = JSON.parse(storedSuggestions);
+        suggestions = JSON.parse(storedSuggestions);
       }
     }
     
