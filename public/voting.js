@@ -35,27 +35,24 @@ const ulElement = document.querySelector('.votes'); // Select the <ul> element
 // Variable to keep track of the most voted activity
 let mostVotedActivity = { activity: '', count: 0 };
 
+if (ulElement) {
+    for (let i = 0; i < suggestions.length; i++) {
+        const suggestion = suggestions[i];
+        const liElement = createLiElement(suggestion.user, suggestion.activity, 0); // Initialize count to 0
+        ulElement.appendChild(liElement);
+    }
+}
+
 function updateMostVotedActivity() {
     suggestions.forEach((suggestion) => {
-        if (suggestion.activity === mostVotedActivity.activity) {
-            mostVotedActivity.count++;
-        }
-        if (suggestion.activity !== mostVotedActivity.activity && suggestion.activity !== '') {
-            mostVotedActivity = { activity: suggestion.activity, count: 1 };
+        if (suggestion.count > mostVotedActivity.count) {
+            mostVotedActivity = { activity: suggestion.activity, count: suggestion.count };
         }
     });
 
     const mostVotedActivityText = document.querySelector('.most-voted-activity');
     if (mostVotedActivityText) {
         mostVotedActivityText.textContent = `Most Voted Activity: ${mostVotedActivity.activity}`;
-    }
-}
-
-if (ulElement) {
-    for (let i = 0; i < suggestions.length; i++) {
-        const suggestion = suggestions[i];
-        const liElement = createLiElement(suggestion.user, suggestion.activity, 0); // Initialize count to 0
-        ulElement.appendChild(liElement);
     }
 }
 

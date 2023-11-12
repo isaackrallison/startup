@@ -56,7 +56,7 @@ function createLiElement(user, activity, count) {
 function displayRandomSuggestions(count) {
     const username = localStorage.getItem('userName');
     const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-    const selectedSuggestions = getRandomSelection(suggestions, count);
+    const selectedSuggestions = getRandomSelection(suggestions, count, username);
 
     const ulElement = document.querySelector('.prev_votes');
 
@@ -71,7 +71,7 @@ function displayRandomSuggestions(count) {
     }
 }
 
-function getRandomSelection(array, count) {
+function getRandomSelection(array, count, username) {
     const shuffledArray = array.slice();
     for (let i = shuffledArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

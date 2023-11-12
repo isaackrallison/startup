@@ -1,12 +1,42 @@
 // Function to start the countdown timer
 function startCountdown() {
-    let seconds = 60; // Set the initial time in seconds
+    let seconds; // Declare the variable outside the if-else block
+
+    // Check if the timer is in local storage
+    if (localStorage.getItem('timer')) {
+        // Timer is present in local storage
+    
+        // Retrieve the timer value from local storage
+        const storedTimerString = localStorage.getItem('timer');
+    
+        // Parse the stored string back to an object
+        const storedTimerObject = JSON.parse(storedTimerString);
+    
+        // Access the timer value
+        seconds = storedTimerObject.seconds; // Use the same variable name
+        if (seconds <= 0) {
+            seconds = 60
+        }
+        console.log("Timer found in local storage:", seconds);
+        // Do something with the timer value, e.g., start the timer using storedTimerValue
+    } else {
+        // Timer is not present in local storage
+        console.log("No timer found in local storage");
+        seconds = 60;
+        // You can handle the case where there's no timer in local storage
+    }
 
     // Display the initial time
     updateTimerDisplay(seconds);
 
     const countdownInterval = setInterval(function () {
         seconds--; // Decrement the time by 1 second
+
+        // Convert the timer value to a string before storing
+        const timerString = JSON.stringify({ seconds });
+
+        // Store the timer string in local storage
+        localStorage.setItem('timer', timerString);
 
         if (seconds >= 0) {
             updateTimerDisplay(seconds); // Update the display
@@ -40,4 +70,4 @@ function navigateToNewPage() {
 }
 
 // Start the countdown when the page loads
-window.addEventListener("load", startCountdown);// 
+window.addEventListener("load", startCountdown);
