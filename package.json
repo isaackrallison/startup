@@ -1,0 +1,15 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "Repository for CS 260 website\r ## Elevator Pitch\r Have you ever had some friends together and tried to decide on what to do?\r <br>\r How about when you are with your family trying to decide where to go to eat?\r <br>\r It can be tough to decide on a choice that makes everyone happy,\r <br>\r especially when there’s a big group. So why not take a quick vote on it!\r <br>\r With this startup the decision can be made in just a few minutes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
