@@ -14,12 +14,12 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
+// Getsuggestions
 apiRouter.get('/suggestions', (_req, res) => {
   res.send(suggestions);
 });
 
-// SubmitScore
+// SubmitSuggestions
 apiRouter.post('/suggestions', (req, res) => {
   suggestions = updatesuggestions(req.body, suggestions);
   res.send(suggestions);

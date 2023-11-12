@@ -53,3 +53,12 @@ Javascript was added to introduce functionality including
 - support for future websocket
 - meaningful interaction logic
 - I would have liked to have a more polished final product, but I am findind this project is a bit larger than I anticipated
+
+## Startup Service
+Backend web service support and interaction was added including
+
+- http service including node.js and express
+- static middleware
+- frontend calling third party service endpoints (quote)
+- backend providing service endpoints (suggestions)
+- frontend calling those service endpoints (suggestions)
