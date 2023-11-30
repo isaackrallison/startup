@@ -59,9 +59,9 @@ function navigateToNewPage() {
     // Determine the new page based on the current page
     let newPage = 'index.html';
 
-    if (currentURL.endsWith('Suggestion_phase.html')) {
+    if (currentURL.includes('Suggestion_phase.html')) {
         newPage = 'voting.html';
-    } else if (currentURL.endsWith('voting.html')) {
+    } else if (currentURL.includes('voting.html')) {
         newPage = 'results.html';
     } // Add more conditions as needed for different pages
 
