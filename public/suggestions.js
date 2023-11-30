@@ -84,7 +84,7 @@ function displayRandomSuggestions(count) {
 
         // Step 6: Loop through the shuffled suggestions and create <li> elements
         for (const suggestion of shuffledSuggestions) {
-            const liElement = createLiElement(username, suggestion.activity, suggestion.count);
+            const liElement = createLiElement(username, suggestion.activity);
             ulElement.appendChild(liElement);
         }
     }
