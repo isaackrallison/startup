@@ -62,3 +62,10 @@ Backend web service support and interaction was added including
 - frontend calling third party service endpoints (quote)
 - backend providing service endpoints (suggestions)
 - frontend calling those service endpoints (suggestions)
+
+## Startup Database
+Database support was added including
+
+-The creation of a MongoDB Atlas Database
+-backend endpoints for manipulating app data
+-The connection of the aplicaiton to the database to store data in MongoDB
