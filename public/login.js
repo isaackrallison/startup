@@ -34,7 +34,7 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
-    window.location.href = 'suggestion_phase.html';
+    window.location.href = 'index.html';
   } else {
     const body = await response.json();
     const modalEl = document.querySelector('#msgModal');
@@ -45,7 +45,7 @@ async function loginOrCreate(endpoint) {
 }
 
 function play() {
-  window.location.href = 'suggestion_phase.html';
+  window.location.href = 'Suggestion_phase.html';
 }
 
 function logout() {
@@ -73,10 +73,27 @@ function setDisplay(controlId, display) {
   }
 }
 
-function user() {
-  data = localStorage.getItem("userName");
-  console.log(data)
-  document.getElementById("user").textContent = data;
-  }
+// function user() {
+//   const data = localStorage.getItem("userName");
 
-user();
+//   if (data != null) {
+//     console.log(data);
+//     document.getElementById("user").textContent = data;
+//   }
+// }
+
+// user();
+
+function user() {
+  const data = localStorage.getItem("userName");
+  const userElement = document.getElementById("user");
+
+  if (userElement) {
+    console.log(data);
+    userElement.textContent = data;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  user();
+});
