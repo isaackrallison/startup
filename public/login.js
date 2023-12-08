@@ -1,28 +1,17 @@
-// function login() {
-//     const nameEl = document.querySelector("#name");
-//     localStorage.setItem("userName", nameEl.value);
-//     window.location.href = "index.html";
-//   }
-  
-//   function user() {
-//     data = localStorage.getItem("userName");
-//     console.log(data)
-//     document.getElementById("user").textContent = data;
-//     }
-
-// user();
-
-(async () => {
+document.addEventListener('DOMContentLoaded', () => {
   const userName = localStorage.getItem('userName');
   if (userName) {
-    document.querySelector('#playerName').textContent = userName;
-    setDisplay('loginControls', 'none');
-    setDisplay('playControls', 'block');
+    const playerNameElement = document.querySelector('#playerName');
+    if (playerNameElement) {
+      playerNameElement.textContent = userName;
+      setDisplay('loginControls', 'none');
+      setDisplay('playControls', 'block');
+    }
   } else {
     setDisplay('loginControls', 'block');
     setDisplay('playControls', 'none');
   }
-})();
+});
 
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
@@ -83,3 +72,11 @@ function setDisplay(controlId, display) {
     playControlEl.style.display = display;
   }
 }
+
+function user() {
+  data = localStorage.getItem("userName");
+  console.log(data)
+  document.getElementById("user").textContent = data;
+  }
+
+user();
