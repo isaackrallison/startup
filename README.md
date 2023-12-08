@@ -66,6 +66,14 @@ Backend web service support and interaction was added including
 ## Startup Database
 Database support was added including
 
--The creation of a MongoDB Atlas Database
--backend endpoints for manipulating app data
--The connection of the aplicaiton to the database to store data in MongoDB
+- The creation of a MongoDB Atlas Database
+- backend endpoints for manipulating app data
+- The connection of the aplicaiton to the database to store data in MongoDB
+
+## Startup Login
+Login support was added including
+
+- Added support for new registration
+- Added support for exsisting user authentication
+- stores and retrieves credentials in MongoDB
+- Restricted application functionality based on authentication
