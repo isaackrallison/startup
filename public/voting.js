@@ -72,5 +72,15 @@ function updateMostVotedActivity() {
     }
 }
 
-updateMostVotedActivity();
+function configureWebSocket() {
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  this.socket.onopen = (event) => {
+    // WebSocket connection opened, you can handle this event if needed
+    // For now, let's just log it
+    console.log('WebSocket connection opened');
+  };
+}
 
+configureWebSocket();
+updateMostVotedActivity();

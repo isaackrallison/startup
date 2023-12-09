@@ -46,7 +46,11 @@ async function displaySuggestions() {
     }
 }
 
-displaySuggestions();
+async function fetchDataAndDisplay() {
+    await displaySuggestions();
+}
+
+fetchDataAndDisplay();
 
 function createLiElement(user, activity, count) {
     const userSuggestion = document.createElement('li');
