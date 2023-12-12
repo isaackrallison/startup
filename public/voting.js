@@ -140,7 +140,8 @@ function handleIncomingData(data) {
             console.log('Received valid suggestions data:', suggestionsData);
 
             // Update the counts in the local storage based on the incoming data
-            const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            // const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            const suggestions = suggestionsData;
 
             suggestionsData.forEach((incomingSuggestion) => {
                 const existingSuggestionIndex = suggestions.findIndex(
@@ -179,6 +180,7 @@ function updateUIWithCounts() {
         while (ulElement.firstChild) {
             ulElement.removeChild(ulElement.firstChild);
         };
+        const suggestions = JSON.parse(localStorage.getItem('suggestions'));
         for (let i = 0; i < suggestions.length; i++) {
             const suggestion = suggestions[i];
             const liElement = createLiElement(
@@ -189,15 +191,7 @@ function updateUIWithCounts() {
             ); // Pass i to the createLiElement function
             ulElement.appendChild(liElement);
         }
-    }
-    suggestions.forEach((suggestion, i) => {
-        const countSpan = document.querySelector(`.votes li:nth-child(${i + 1}) .vote-count`);
-        if (countSpan) {
-            countSpan.textContent = suggestion.count + '  ';
-        } else {
-            console.error(`Unable to find countSpan for suggestion at index ${i}`);
-        }
-    });
+    };
     
     // After updating the UI, refresh the most voted activity
     updateMostVotedActivity();
