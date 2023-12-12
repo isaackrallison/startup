@@ -128,32 +128,50 @@ function configureWebSocket() {
 }
 
 function handleIncomingData(data) {
-    // Assuming data is in the format { player: 'somePlayer', suggestions: [{ activity: 'someActivity', count: 5 }, ...] }
+    // Assuming data is in the format { event: 'message', data: { player: 'suggestions', suggestions: [...] } }
 
-    // Update the counts in the local storage based on the incoming data
-    data.suggestions.forEach((incomingSuggestion) => {
-        const existingSuggestionIndex = suggestions.findIndex(
-            (suggestion) => suggestion.activity === incomingSuggestion.activity
-        );
+    console.log('Received data:', data);
 
-        if (existingSuggestionIndex !== -1) {
-            // Update the count for the existing suggestion
-            suggestions[existingSuggestionIndex].count = incomingSuggestion.count;
-        } else {
-            // Add the new suggestion to the local storage if it doesn't exist
-            suggestions.push({
-                activity: incomingSuggestion.activity,
-                count: incomingSuggestion.count,
+    // Check if data contains 'suggestions' property and it's a string
+    if (data && data.data && typeof data.data.suggestions === 'string') {
+        const suggestionsData = JSON.parse(data.data.suggestions);
+        
+        if (Array.isArray(suggestionsData)) {
+            console.log('Received valid suggestions data:', suggestionsData);
+
+            // Update the counts in the local storage based on the incoming data
+            const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+
+            suggestionsData.forEach((incomingSuggestion) => {
+                const existingSuggestionIndex = suggestions.findIndex(
+                    (suggestion) => suggestion.activity === incomingSuggestion.activity
+                );
+
+                if (existingSuggestionIndex !== -1) {
+                    // Update the count for the existing suggestion
+                    suggestions[existingSuggestionIndex].count = incomingSuggestion.count;
+                } else {
+                    // Add the new suggestion to the local storage if it doesn't exist
+                    suggestions.push({
+                        activity: incomingSuggestion.activity,
+                        count: incomingSuggestion.count,
+                    });
+                }
             });
+
+            // Save the updated suggestions array to local storage
+            localStorage.setItem('suggestions', JSON.stringify(suggestions));
+
+            // Update the UI with the new counts
+            updateUIWithCounts();
+        } else {
+            console.error('Invalid format for data.data.suggestions. Type:', typeof suggestionsData);
         }
-    });
-
-    // Save the updated suggestions array to local storage
-    localStorage.setItem('suggestions', JSON.stringify(suggestions));
-
-    // Update the UI with the new counts
-    updateUIWithCounts();
+    } else {
+        console.error('Invalid format for data.data.suggestions:', data.data && data.data.suggestions);
+    }
 }
+
 
 function updateUIWithCounts() {
     // Update the counts displayed in the UI based on the current suggestions array
@@ -161,12 +179,16 @@ function updateUIWithCounts() {
         const countSpan = document.querySelector(`.votes li:nth-child(${i + 1}) .vote-count`);
         if (countSpan) {
             countSpan.textContent = suggestion.count + '  ';
+        } else {
+            console.error(`Unable to find countSpan for suggestion at index ${i}`);
         }
     });
     
     // After updating the UI, refresh the most voted activity
     updateMostVotedActivity();
-    }
+}
+
+
     
     const voteInstance = new Vote();
     updateMostVotedActivity();
