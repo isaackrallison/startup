@@ -20,7 +20,7 @@ function peerProxy(httpServer) {
     connections.push(connection);
 
     // Forward messages to everyone except the sender
-    ws.on('message', function message(data) {
+    ws.on('vote', function message(data) {
       connections.forEach((c) => {
         if (c.id !== connection.id) {
           c.ws.send(data);

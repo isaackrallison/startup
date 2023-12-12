@@ -1,5 +1,24 @@
 let userVotes = 0;
 
+class Vote {
+    Player;
+    sugg = new Map();
+    socket;
+
+  
+    constructor() {
+      this.Player = localStorage.userName;
+  
+      suggestions.forEach((suggestion) => {
+        if (suggestion.count > 0) {
+            this.sugg.set(suggestion.activity, suggestion.count);
+      };
+    })    
+      this.broadcastEvent(this.Player, this.sugg);
+      this.configureWebSocket();
+    }
+}
+
 function createLiElement(user, activity, count, i) {
     const userSuggestion = document.createElement('li');
     userSuggestion.className = 'vote';
@@ -28,6 +47,7 @@ function createLiElement(user, activity, count, i) {
             // Update the local storage with the new count
             suggestions[i].count = count; // Update the count in the suggestions array
             localStorage.setItem('suggestions', JSON.stringify(suggestions));
+            this.broadcastEvent('suggestions', JSON.stringify(suggestions))
 
             countSpan.textContent = count + '  '; // Update the count
             updateMostVotedActivity(); // Call the function to update the most voted activity
@@ -58,8 +78,6 @@ if (ulElement) {
 }
 
 function updateMostVotedActivity() {
-    let mostVotedActivity = { activity: '', count: 0 };
-
     suggestions.forEach((suggestion) => {
         if (suggestion.count > mostVotedActivity.count) {
             mostVotedActivity = { activity: suggestion.activity, count: suggestion.count };
@@ -80,7 +98,14 @@ function configureWebSocket() {
     // For now, let's just log it
     console.log('WebSocket connection opened');
   };
+  this.socket.onclose = (event) => {
+    console.log('Websocket connection closed');
+  };
+  this.socket.onmessage = async (event) => {
+    console.log('message being sent')
+    const msg = JSON.parse(await event.data.text());
+};
 }
 
-configureWebSocket();
+new Vote();
 updateMostVotedActivity();
