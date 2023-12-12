@@ -175,6 +175,21 @@ function handleIncomingData(data) {
 
 function updateUIWithCounts() {
     // Update the counts displayed in the UI based on the current suggestions array
+    if (ulElement) {
+        while (ulElement.firstChild) {
+            ulElement.removeChild(ulElement.firstChild);
+        };
+        for (let i = 0; i < suggestions.length; i++) {
+            const suggestion = suggestions[i];
+            const liElement = createLiElement(
+                suggestion.user,
+                suggestion.activity,
+                suggestion.count || 0,
+                i
+            ); // Pass i to the createLiElement function
+            ulElement.appendChild(liElement);
+        }
+    }
     suggestions.forEach((suggestion, i) => {
         const countSpan = document.querySelector(`.votes li:nth-child(${i + 1}) .vote-count`);
         if (countSpan) {
@@ -187,8 +202,6 @@ function updateUIWithCounts() {
     // After updating the UI, refresh the most voted activity
     updateMostVotedActivity();
 }
-
-
     
     const voteInstance = new Vote();
     updateMostVotedActivity();
