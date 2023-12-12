@@ -77,3 +77,11 @@ Login support was added including
 - Added support for exsisting user authentication
 - stores and retrieves credentials in MongoDB
 - Restricted application functionality based on authentication
+
+## Startup WebSocket
+Websocket support was added on the voting page including
+
+- a backend that listens for Websocket connection
+- a frontend that makes a Websocket connection
+- Data is sent over a websocket connection
+- websocket data is displayed in application interface (number of votes increaces)
