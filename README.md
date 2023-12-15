@@ -85,3 +85,11 @@ Websocket support was added on the voting page including
 - a frontend that makes a Websocket connection
 - Data is sent over a websocket connection
 - websocket data is displayed in application interface (number of votes increaces)
+
+## Startup React
+Startup was changed to react, including
+
+- Bundled using WebPack and Babel as generated from using create-react-app
+- Multiple functional react components
+- React router
+- React Hooks
